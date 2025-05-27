@@ -131,26 +131,6 @@ export class TaskService {
     }
 
     /**
-     * Obtiene tareas filtradas por prioridad
-     * @param priority ID de la prioridad
-     * @returns Array de tareas con la prioridad especificada
-     */
-    getByPriority(priority: number): ITask[] {
-        const tasks = this.getAll();
-        return tasks.filter(task => task.priority === priority);
-    }
-
-    /**
-     * Obtiene tareas filtradas por progreso
-     * @param progress ID del progreso
-     * @returns Array de tareas con el progreso especificado
-     */
-    getByProgress(progress: number): ITask[] {
-        const tasks = this.getAll();
-        return tasks.filter(task => task.progress === progress);
-    }
-
-    /**
      * Genera un nuevo ID único para las tareas
      * @param tasks Array actual de tareas
      * @returns Nuevo ID único

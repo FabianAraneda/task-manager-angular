@@ -1,13 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
-export interface ConfirmationData {
-  title?: string;
-  message: string;
-  confirmText?: string;
-  cancelText?: string;
-  taskTitle?: string;
-}
+import { IConfirmationData } from 'src/app/interface/confirmation-data.interface';
 
 @Component({
   selector: 'app-confirmation-modal',
@@ -16,9 +9,13 @@ export interface ConfirmationData {
 })
 export class ConfirmationModalComponent {
 
+  /**
+   * Referencia al modal de angular material
+   */
+  public dialogRef = inject(MatDialogRef<ConfirmationModalComponent>);
+
   constructor(
-    public dialogRef: MatDialogRef<ConfirmationModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ConfirmationData
+    @Inject(MAT_DIALOG_DATA) public data: IConfirmationData
   ) {}
 
   /**
@@ -37,6 +34,8 @@ export class ConfirmationModalComponent {
 
   /**
    * Obtiene el título del modal
+   * 
+   * @returns Titulo del modal
    */
   getTitle(): string {
     return this.data.title || 'Confirmar acción';
@@ -44,6 +43,8 @@ export class ConfirmationModalComponent {
 
   /**
    * Obtiene el texto del botón confirmar
+   * 
+   * @returns Texto del btn
    */
   getConfirmText(): string {
     return this.data.confirmText || 'Confirmar';
@@ -51,6 +52,8 @@ export class ConfirmationModalComponent {
 
   /**
    * Obtiene el texto del botón cancelar
+   * 
+   * @returns Texto del btn
    */
   getCancelText(): string {
     return this.data.cancelText || 'Cancelar';
