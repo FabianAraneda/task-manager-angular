@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: task-manager-angular
+  labels:
+    app: task-manager-angular
+spec:
+  to:
+    kind: Service
+    name: task-manager-angular
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

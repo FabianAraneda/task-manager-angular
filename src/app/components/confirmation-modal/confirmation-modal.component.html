@@ -1,0 +1,34 @@
+<div class="confirmation-modal">
+
+  <div mat-dialog-title class="modal-header">
+    <h2 class="modal-title">{{ getTitle() }}</h2>
+  </div>
+
+  <div mat-dialog-content class="modal-content">
+    <div class="warning-section">
+      <mat-icon class="warning-icon">warning</mat-icon>
+      
+      <p class="warning-message">{{ data.message }}</p>
+      
+      <div *ngIf="data.taskTitle" class="task-info">
+        <strong>"{{ data.taskTitle }}"</strong>
+      </div>
+      
+      <p class="warning-subtitle">Esta acción no se puede deshacer.</p>
+    </div>
+  </div>
+
+  <!-- Botones de acción -->
+  <div mat-dialog-actions class="modal-actions">
+    <button mat-stroked-button (click)="onCancel()" class="cancel-btn">
+      {{ getCancelText() }}
+    </button>
+    <button mat-raised-button 
+            color="warn" 
+            (click)="onConfirm()"
+            class="confirm-btn">
+      <mat-icon>delete</mat-icon>
+      {{ getConfirmText() }}
+    </button>
+  </div>
+</div>

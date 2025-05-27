@@ -1,0 +1,307 @@
+.table-container {
+  overflow: auto;
+  margin: 2rem 3rem;
+  max-height: 75dvh;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2px;
+
+  .table-content {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-bottom: 1px solid #e1e8ed;
+
+    h2 {
+      margin: 0;
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    .table-actions {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+.new-btn {
+  cursor: pointer;
+  background: linear-gradient(135deg, #8360c3 0%, #2ebf91 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  text-transform: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  }
+
+  mat-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+table {
+  width: 100%;
+  background: white;
+
+  .mat-header-row {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 2px solid #dee2e6;
+
+    .mat-header-cell {
+      color: #495057;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 16px 12px;
+      border-bottom: none;
+    }
+  }
+
+  .mat-row {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f3f4;
+
+    &:hover {
+      background-color: #f8f9ff;
+      transform: scale(1.01);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    .mat-cell {
+      padding: 16px 12px;
+      font-size: 0.875rem;
+      color: #495057;
+      border-bottom: none;
+    }
+  }
+}
+
+.priority-high {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(238, 90, 36, 0.3);
+}
+
+.priority-medium {
+  background: linear-gradient(135deg, #ffa726, #ff9800);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+}
+
+.priority-low {
+  background: linear-gradient(135deg, #66bb6a, #4caf50);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #42a5f5, #2196f3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.3);
+}
+
+.status-progress {
+  background: linear-gradient(135deg, #ffa726, #ff9800);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #66bb6a, #4caf50);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.date-overdue {
+  color: #dc3545;
+  font-weight: bold;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.date-urgent {
+  color: #fd7e14;
+  font-weight: 600;
+  background: rgba(253, 126, 20, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.date-warning {
+  color: #ffc107;
+  font-weight: 500;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.date-normal {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.mat-column-Acciones {
+  width: 120px;
+  text-align: center;
+
+  mat-icon {
+    cursor: pointer;
+  }
+
+  .mat-icon-button {
+    cursor: pointer;
+    margin: 0 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+
+    &.mat-primary {
+      background: rgba(33, 150, 243, 0.1);
+
+      &:hover {
+        background: rgba(33, 150, 243, 0.2);
+        transform: scale(1.1);
+      }
+    }
+
+    &.mat-warn {
+      background: rgba(244, 67, 54, 0.1);
+
+      &:hover {
+        background: rgba(244, 67, 54, 0.2);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.no-data {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin: 20px;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+    color: #6c757d;
+  }
+
+  p {
+    margin: 16px 0;
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
+  }
+
+  button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .table-container {
+    margin: 1rem;
+
+    .table-header {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+
+      .table-actions {
+        justify-content: center;
+      }
+    }
+  }
+
+  .mat-column-Descripçion {
+    display: none;
+  }
+
+  table {
+    font-size: 0.8rem;
+
+    .mat-cell,
+    .mat-header-cell {
+      padding: 8px 6px;
+    }
+  }
+}

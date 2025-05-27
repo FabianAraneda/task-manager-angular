@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100dvh;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url('/assets/image/task-bk.jpeg');
+  background-size: 100dvw 100dvh;
+}
+
+.primary-btn {
+  background-color: #15e11585;
+  color: black;
+  font-weight: 800;
+  border-radius: 8rem;
+}
